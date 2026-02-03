@@ -6,10 +6,13 @@
   
   <title>HARMONI | PKM-PM</title>
   <style>
-    .card:hover {
-  transform: translateY(-4px);
-  transition: 0.3s;
-  background: #eaf0fb;
+   .card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.08);
 }
 
   body {
@@ -95,32 +98,44 @@
   footer {
     background: #2c3e50;
     color: white;
-    text-align: justify;
+    text-align: center;
     padding: 30px 15px;
     font-size: 14px;
     margin-top: 50px;
   }
-</style>
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 32px;
+    @keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-
-  nav a {
-    display: inline-block;
-    margin: 8px 6px;
-    font-size: 14px;
-  }
-
-  section {
-    padding: 30px 20px;
-    margin: 20px 10px;
-  }
-
-  .card {
-    padding: 20px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+section {
+  animation: fadeUp 0.8s ease-in-out;
+}
+    nav a {
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #4b6cb7;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+</style>
 
 </head>
 
@@ -131,15 +146,6 @@
   <p>Healing and Resilience Model Narrative Inclusion</p>
   <p>Program Kreativitas Mahasiswa – Pengabdian kepada Masyarakat (PKM-PM)</p>
 </header>
-<img 
-  src="https://images.unsplash.com/photo-1520975916090-3105956dac38"
-  alt="Pendampingan Remaja"
-  style="
-    width:100%;
-    max-height:350px;
-    object-fit:cover;
-  "
->
 
 <nav>
   <a href="#tentang">Tentang</a>
@@ -288,6 +294,7 @@ serta sarana diseminasi model penguatan resiliensi remaja fatherless berbasis ko
 
 </body>
 </html>
+
 
 
 
